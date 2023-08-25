@@ -60,7 +60,17 @@ def display_product_card(product_row, batch_option):
 
 
 def main():
-    st.title("Product Image Viewer")
+    st.title("Product Image Reviewer")
+
+    st.write("This app is designed to take a spreadsheet of images with the following columns:")
+
+    st.markdown("""
+        | SKU | Product Name | Batch | Website Y/N | Image 1 | Image 2 | Image 3 | Image 4 | Image 5 |
+        |-----|--------------|-------|-------------|---------|---------|---------|---------|---------|
+        """)
+
+    st.write(
+        "It will then display the images for checking below, allowing you to untick the checkbox if the image is not right. At the same time, it will check for broken images in the list and automatically untick the checkbox. At the bottom of the list, you can submit the image checks, then you will be able to download the results as a csv")
     uploaded_file = st.file_uploader("Upload your spreadsheet", type=["csv", "xlsx"])
 
     if uploaded_file:
