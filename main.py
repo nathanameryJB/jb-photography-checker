@@ -9,7 +9,9 @@ st.set_page_config(layout="wide")
 def check_image_status(url):
     """Return the status of the image URL. If it's valid (does not return a 4xx or 5xx status code), return True and status code. Otherwise, return False and the status code."""
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0",
+
+    "secretKey":st.secrets["secret_key"]
     }
     try:
         response = requests.head(url, headers=headers, allow_redirects=True, timeout=5)
